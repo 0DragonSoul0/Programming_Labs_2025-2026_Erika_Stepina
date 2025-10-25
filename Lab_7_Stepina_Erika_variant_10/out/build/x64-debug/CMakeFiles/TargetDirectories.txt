@@ -1,0 +1,5 @@
+C:/C++ programming/Lab_7_Stepina_Erika_variant_10/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/C++ programming/Lab_7_Stepina_Erika_variant_10/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/C++ programming/Lab_7_Stepina_Erika_variant_10/out/build/x64-debug/Lab_7_Stepina_Erika_variant_10/CMakeFiles/Lab_7_Stepina_Erika_variant_10.dir
+C:/C++ programming/Lab_7_Stepina_Erika_variant_10/out/build/x64-debug/Lab_7_Stepina_Erika_variant_10/CMakeFiles/edit_cache.dir
+C:/C++ programming/Lab_7_Stepina_Erika_variant_10/out/build/x64-debug/Lab_7_Stepina_Erika_variant_10/CMakeFiles/rebuild_cache.dir
