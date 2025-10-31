@@ -1,5 +1,5 @@
 #pragma once
 
 namespace forlab {
-	int matrixInput(size_t i, size_t j);
+	int matrixInput(int** a, size_t i, size_t j);
 }
