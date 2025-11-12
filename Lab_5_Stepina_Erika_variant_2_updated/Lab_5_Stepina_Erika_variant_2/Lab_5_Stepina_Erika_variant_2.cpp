@@ -115,7 +115,7 @@ int main() {
 		std::cout << a2[n] << " ";
 	}
 	std::cout << std::endl;
-	for (int k = size_n2 - 1; k > 0; ++k) {
+	for (int k = size_n2 - 1; k > 0; --k) {
 		for (int n = 1; n < size_n2; ++n) {
 			/*if (compare_first_numbers(n, *a2) == true) {
 				std::swap(a2[n], a2[n + 1]);
