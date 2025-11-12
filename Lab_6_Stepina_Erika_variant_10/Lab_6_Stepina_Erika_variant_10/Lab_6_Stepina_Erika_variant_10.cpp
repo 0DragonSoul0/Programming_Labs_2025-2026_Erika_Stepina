@@ -3,11 +3,11 @@
 #include <locale.h>
 #include "prime.hpp"
 #include "matrix_input.hpp"
-#include "matrix_output.cpp"
+#include "matrix_output.hpp"
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-	const size_t limit = 100;
+	/*const size_t limit = 100;
 	int a[limit][limit];
 	size_t size;
 	std::cout << "Введите желаемое кол-во строк и столбцов матрицы (i = j): " << std::endl;
@@ -16,21 +16,18 @@ int main() {
 		size = limit;
 		std::cout << "Слишком большое значение, матрица усечена до " << limit << "строк и столбцов" << std::endl;
 	}
-	for (size_t i = 1; i < size + 1; ++i) {
-		for (size_t j = 1; j < size + 1; ++j) {
-			forlab::matrixInput(i, j);
+	int* a1 = &a[size][size];
+	int** a2 = &a1;*/
+	int size;
+	std::cout << "Введите желаемое кол-во строк и столбцов матрицы (i = j): " << std::endl;
+	std::cin >> size;
+	int a[100][100];
+	forlab::matrixInput(a, size);
 			/*std::cout << "Введите элемент a[" << i << "][" << j << "]:" << std::endl;
 			std::cin >> a[i][j];*/
-		}
-	}
 	std::cout << "Изначальная матрица:" << std::endl;
-	for (int i = 1; i < size + 1; ++i) {
-		for (int j = 1; j < size + 1; ++j) {
-			forlab::matrixOutput(i, j);
+	forlab::matrixOutput(a, size);
 			//std::cout << a[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
 	for (int j = 1; j < size + 1; ++j) {
 		int sum_of_elements = 0;
 		int cnt_prime_numbers = 0;
@@ -56,12 +53,7 @@ int main() {
 		}
 	}
 	std::cout << "Изменённая матрица:" << std::endl;
-	for (int i = 1; i < size + 1; ++i) {
-		for (int j = 1; j < size + 1; ++j) {
-			forlab::matrixOutput(i, j);
+	forlab::matrixOutput(a, size);
 			//std::cout << a[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
 	return 0;
 }

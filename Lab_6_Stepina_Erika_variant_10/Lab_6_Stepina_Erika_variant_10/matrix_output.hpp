@@ -1,5 +1,5 @@
 #pragma once
 
 namespace forlab {
-	int matrixOutput(int** a, int i, int j);
+	void matrixOutput(int a[100][100], int size);
 }
