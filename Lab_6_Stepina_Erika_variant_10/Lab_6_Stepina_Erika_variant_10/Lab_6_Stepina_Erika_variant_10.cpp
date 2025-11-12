@@ -41,12 +41,14 @@ int main() {
 			sum_of_elements += a[i][j];
 		}
 		if (cnt_prime_numbers == 0 and sum_of_elements == 0) {
-			for (int i1 = 1; i1 < size + 1; ++i1) {
-				for (int j1 = 1; j1 < size + 1; ++j1) {
-					if (abs(a[i1][j1]) > abs(a[i1][j1 + 1])) {
-						int tmp = a[i1][j1];
-						a[i1][j1] = a[i1][j1 + 1];
-						a[i1][j1 + 1] = tmp;
+			for (int k1 = size - 1; k1 > 0; --k1) {
+				for (int i1 = 1; i1 < size + 1; ++i1) {
+					for (int j1 = 1; j1 < size + 1; ++j1) {
+						if (abs(a[i1][j1]) > abs(a[i1][j1 + 1])) {
+							int tmp = a[i1][j1];
+							a[i1][j1] = a[i1][j1 + 1];
+							a[i1][j1 + 1] = tmp;
+						}
 					}
 				}
 			}
