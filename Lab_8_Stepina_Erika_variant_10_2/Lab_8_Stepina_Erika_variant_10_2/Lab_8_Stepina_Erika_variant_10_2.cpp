@@ -12,7 +12,7 @@ int main() {
 	//2 пункт.
 
 	std::string text_2;
-	std::cout << "Введите текст:" << std::endl;
+	std::cout << "Введите текст на английском языке:" << std::endl;
 	std::getline(std::cin, text_2);
 
 	std::vector<std::string> words_2 = forlab::getWords_2(text_2);

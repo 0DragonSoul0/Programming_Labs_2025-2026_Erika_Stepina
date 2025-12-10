@@ -14,38 +14,38 @@ namespace forlab {
 
 		while (end != std::string::npos) {
 			std::string temp = text_2.substr(start, end - start);
+			int count = 1;
 			for (int i = 0; i < temp.length(); ++i) {
-				int count = 1;
 				for (int j = i + 1; j < temp.length(); ++j) {
 					if (temp[i] == temp[j]) {
 						count += 1;
 					}
 				}
-				if (count > 1) {
-					for (char c : temp) {
-						if (vowels.find(c) != std::string::npos) {
-							temp.replace(c, 1, "");
-						}
-					}
-					while (punctuation.find(temp[0]) != std::string::npos) {
-						temp.erase(0, 1);
-					}
-					while (punctuation.find(temp[temp.length() - 1]) != std::string::npos) {
-						temp.erase(temp.length() - 1, temp.length());
-					}
-					words_2.push_back(temp);
-				}
-				else if (count == 1) {
-					while (punctuation.find(temp[0]) != std::string::npos) {
-						temp.erase(0, 1);
-					}
-					while (punctuation.find(temp[temp.length() - 1]) != std::string::npos) {
-						temp.erase(temp.length() - 1, temp.length());
-					}
-					words_2.push_back(temp);
-				}
-				count = 1;
 			}
+			if (count > 1) {
+				for (char c : temp) {
+					if (vowels.find(c) != std::string::npos) {
+						temp.replace(c, 1, "");
+					}
+				}
+				while (punctuation.find(temp[0]) != std::string::npos) {
+					temp.erase(0, 1);
+				}
+				while (punctuation.find(temp[temp.length() - 1]) != std::string::npos) {
+					temp.erase(temp.length() - 1, temp.length());
+				}
+				words_2.push_back(temp);
+				}
+			else if (count == 1) {
+				while (punctuation.find(temp[0]) != std::string::npos) {
+					temp.erase(0, 1);
+				}
+				while (punctuation.find(temp[temp.length() - 1]) != std::string::npos) {
+					temp.erase(temp.length() - 1, temp.length());
+				}
+				words_2.push_back(temp);
+			}
+			count = 1;
 			start = end + 1;
 			end = text_2.find(splitter, start);
 		}
