@@ -1,0 +1,5 @@
+C:/Users/EVStepina/Desktop/Stepina Erika lab 1 variant 2/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/EVStepina/Desktop/Stepina Erika lab 1 variant 2/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/EVStepina/Desktop/Stepina Erika lab 1 variant 2/out/build/x64-debug/Stepina Erika lab 1 variant 2/CMakeFiles/CMakeTarget.dir
+C:/Users/EVStepina/Desktop/Stepina Erika lab 1 variant 2/out/build/x64-debug/Stepina Erika lab 1 variant 2/CMakeFiles/edit_cache.dir
+C:/Users/EVStepina/Desktop/Stepina Erika lab 1 variant 2/out/build/x64-debug/Stepina Erika lab 1 variant 2/CMakeFiles/rebuild_cache.dir
