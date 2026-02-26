@@ -8,10 +8,10 @@ private:
 	bool negative = false;
 	std::vector<short> digits;
 	void removeZeros() {
-		while (digits.size() > 1 and digits.back() == 0) {
+		while (digits.size() > 1 && digits.back() == 0) {
 			digits.pop_back();
 		}
-		if (digits.size() == 1 and digits.back() == 0) {
+		if (digits.size() == 1 || digits.back() == 0) {
 			negative = false;
 		}
 	}
@@ -68,7 +68,7 @@ public:
 			return *this;
 		}
 		bool both_negative = false;
-		if (negative and other.negative) {
+		if (negative && other.negative) {
 			both_negative = true;
 		}
 		else if (negative) {
@@ -89,7 +89,7 @@ public:
 		size_t max_len = std::max(digits.size(), other.digits.size());
 		short carry = 0;
 
-		for (size_t i = 0; i < max_len or carry != 0; ++i) {
+		for (size_t i = 0; i < max_len || carry != 0; ++i) {
 			short sum = carry;
 			if (i < digits.size()) {
 				sum += digits[i];
@@ -121,7 +121,7 @@ public:
 			return *this;
 		}
 		bool both_negative = false;
-		if (negative and other.negative) {
+		if (negative && other.negative) {
 			BigInt thisCopy = *this;
 			BigInt otherCopy = other;
 			thisCopy.negative = false;
@@ -148,7 +148,7 @@ public:
 			result.digits.clear();
 			short carry = 0;
 
-			for (size_t i = 0; i < digits.size() or carry != 0; ++i) {
+			for (size_t i = 0; i < digits.size() || carry != 0; ++i) {
 				short dgA = (i < digits.size()) ? digits[i] : 0;
 				short dgB = (i < other.digits.size()) ? other.digits[i] : 0;
 				short interval = dgA - dgB - carry;
@@ -171,7 +171,7 @@ public:
 			result.digits.clear();
 			short carry = 0;
 
-			for (size_t i = 0; i < other.digits.size() or carry != 0; ++i) {
+			for (size_t i = 0; i < other.digits.size() || carry != 0; ++i) {
 				short dgA = (i < digits.size()) ? digits[i] : 0;
 				short dgB = (i < other.digits.size()) ? other.digits[i] : 0;
 
@@ -198,7 +198,7 @@ public:
 	}
 
 	BigInt operator*(const BigInt& other) const {
-		if (*this == 0 or other == 0) {
+		if (*this == 0 || other == 0) {
 			return BigInt(0);
 		}
 		if (*this == 1) {
@@ -221,7 +221,7 @@ public:
 			BigInt interval;
 			interval.digits.clear();
 			short carry = 0;
-			for (int j = 0; j < digits.size() or carry != 0; ++j) {
+			for (int j = 0; j < digits.size() || carry != 0; ++j) {
 				short t = carry;
 				if (j < digits.size()) {
 					t += other.digits[i] * digits[j];
@@ -272,14 +272,14 @@ public:
 	}
 
 	bool operator<(const BigInt& other) const {
-		if (negative and !other.negative) {
+		if (negative && !other.negative) {
 			return true;
 		}
-		if (!negative and other.negative) {
+		if (!negative && other.negative) {
 			return false;
 		}
 
-		bool both_negative = (negative and other.negative);
+		bool both_negative = (negative && other.negative);
 
 		if (!both_negative) {
 			if (digits.size() < other.digits.size()) {

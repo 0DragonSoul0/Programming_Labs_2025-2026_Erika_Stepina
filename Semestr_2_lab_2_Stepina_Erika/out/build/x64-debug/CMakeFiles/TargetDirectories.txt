@@ -1,5 +1,3 @@
+C:/C++ programming/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/CMakeFiles/Semestr_2_lab_2_Stepina_Erika.dir
 C:/C++ programming/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/CMakeFiles/edit_cache.dir
 C:/C++ programming/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
-C:/C++ programming/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/Semestr_2_lab_2_Stepina_Erika/CMakeFiles/Semestr_2_lab_2_Stepina_Erika.dir
-C:/C++ programming/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/Semestr_2_lab_2_Stepina_Erika/CMakeFiles/edit_cache.dir
-C:/C++ programming/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/Semestr_2_lab_2_Stepina_Erika/CMakeFiles/rebuild_cache.dir
