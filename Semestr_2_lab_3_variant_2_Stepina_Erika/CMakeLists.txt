@@ -11,5 +11,4 @@ endif()
 
 project ("Semestr_2_lab_3_variant_2_Stepina_Erika")
 
-# Включите подпроекты.
-add_subdirectory ("Semestr_2_lab_3_variant_2_Stepina_Erika")
+add_executable (Semestr_2_lab_2_Stepina_Erika "Semestr_2_lab_3_variant_2_Stepina_Erika/Semestr_2_lab_3_variant_2_Stepina_Erika.cpp" "Semestr_2_lab_3_variant_2_Stepina_Erika/Semestr_2_lab_3_variant_2_Stepina_Erika.h" "Semestr_2_lab_3_variant_2_Stepina_Erika/car.cpp" "Semestr_2_lab_3_variant_2_Stepina_Erika/car.h")

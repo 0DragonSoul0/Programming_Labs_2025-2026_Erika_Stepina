@@ -15,7 +15,7 @@ Car::Car(std::string br, std::string md, int year, std::string gn, int ml) {
 	release_year = year;
 	govNumber = gn;
 	mileage = ml;
-	if (gn.length() != 6 or !(isalpha(gn[0]) and isdigit(gn[1]) and isdigit(gn[2]) and isdigit(gn[3]) and isalpha(gn[4]) and isalpha(gn[5]))) {
+	if (gn.length() != 6 || !(isalpha(gn[0]) && isdigit(gn[1]) && isdigit(gn[2]) && isdigit(gn[3]) && isalpha(gn[4]) && isalpha(gn[5]))) {
 		throw std::invalid_argument("Ошибка: недействительный гос. номер");
 	}
 }
