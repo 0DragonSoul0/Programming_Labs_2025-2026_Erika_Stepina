@@ -360,7 +360,6 @@ public:
 			n = BigInt(str);
 		}
 		catch (const std::exception& error) {
-			std::cerr << "Ошибка: " << error.what() << std::endl;
 			throw std::invalid_argument("введено нечисловое значение.");
 		}
 		return os;
@@ -389,8 +388,7 @@ int main() {
 	}
 	catch (std::invalid_argument& err) {
 		std::cerr << "Ошибка: " << err.what() << std::endl;
-		return false;
-		exit(-1);
+		return -1;
 	}
 	while (true) {
 		Menu();
@@ -446,4 +444,5 @@ int main() {
 			break;
 		}
 	}
+
 }
