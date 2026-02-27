@@ -2,6 +2,7 @@
 #include <string>
 #include <locale.h>
 #include <cctype>
+#include <algorithm>
 
 class Car {
 private:

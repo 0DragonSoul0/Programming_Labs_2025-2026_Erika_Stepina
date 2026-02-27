@@ -15,6 +15,21 @@ Car::Car(std::string br, std::string md, int year, std::string gn, int ml) {
 	release_year = year;
 	govNumber = gn;
 	mileage = ml;
+	if (br.empty()) {
+		brand = Car().brand;
+	}
+	if (std::any_of(br.begin(), br.end(), ::ispunct)) {
+		throw std::invalid_argument("Ошибка: недействительное название бренда.");
+	}
+	if (md.empty()) {
+		model = Car().model;
+	}
+	if (std::any_of(md.begin(), md.end(), ::ispunct)) {
+		throw std::invalid_argument("Ошибка: недействительное название модели.");
+	}
+	if (gn.empty()) {
+		govNumber = Car().govNumber;
+	}
 	if (gn.length() != 6 || !(isalpha(gn[0]) && isdigit(gn[1]) && isdigit(gn[2]) && isdigit(gn[3]) && isalpha(gn[4]) && isalpha(gn[5]))) {
 		throw std::invalid_argument("Ошибка: недействительный гос. номер");
 	}
@@ -29,9 +44,7 @@ Car::Car(const Car& other) {
 	std::cout << "Запущен конструктор копирования." << std::endl;
 }
 
-Car::~Car() {
-	std::cout << "Запущен деструктор: " << brand << " " << model << std::endl;
-}
+Car::~Car() {}
 
 std::string Car::toString() const {
 	std::string out = brand + " " + model + ", " + std::to_string(release_year) + " г., гос. номер " + govNumber + ", пробег " + std::to_string(mileage) + " км";
