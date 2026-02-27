@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <locale.h>
+#include <cstdlib>
 
 class BigInt {
 private:
@@ -355,22 +356,43 @@ public:
 	friend std::istream& operator>>(std::istream& os, BigInt& n) {
 		std::string str;
 		os >> str;
-
+		
 		try {
 			n = BigInt(str);
 		}
-		catch (...) {
+		/*catch (std::invalid_argument& err) {
+			std::cerr << "Ошибка: " << err.what() << std::endl;
+		}*/
+		/*catch (...) {
 			n = BigInt();
+		}*/
+		catch (const std::exception& error) {
+			std::cerr << "Ошибка: " << error.what() << std::endl;
+			throw std::invalid_argument("введено нечисловое значение.");
 		}
+
 		return os;
+
+
+		/*catch (const std::exception& error) {
+			std::cerr << "Ошибка: " << error.what() << std::endl;
+			throw std::invalid_argument("Ошибка: введено нечисловое значение");
+		}*/
+
+		//catch (...) {
+		//	//n = BigInt(str);
+		//	for (char c : str.substr(1, str.length() - 1)) {
+		//		if (!std::isdigit(c)) {
+		//			throw std::invalid_argument("Ошибка: введено нечисловое значение");
+		//		}
+		//	}
+		//	//n = BigInt(str);
+		//}
+
 	}
 };
 
-int main() {
-	setlocale(LC_ALL, "Russian");
-	BigInt x, y;
-	std::cout << "Введите два числа: ";
-	std::cin >> x >> y;
+void Menu() {
 	std::cout << "Что хотите с ними сделать?" << std::endl;
 	std::cout << "1. Сложить" << std::endl;
 	std::cout << "2. Вычесть" << std::endl;
@@ -379,55 +401,130 @@ int main() {
 	std::cout << "5. Сравнить (>)" << std::endl;
 	std::cout << "6. Сравнить (==)" << std::endl;
 	std::cout << "7. Сравнить (!=)" << std::endl;
-	short opt;
-	std::cin >> opt;
-	switch (opt) {
-	case 1:
-		std::cout << x << " + " << y << " = " << (x + y) << std::endl;
-		break;
+}
 
-	case 2:
-		std::cout << x << " - " << y << " = " << (x - y) << std::endl;
-		break;
+int main() {
+	setlocale(LC_ALL, "Russian");
+	BigInt x;
+	BigInt y;
+	std::cout << "Введите два числа: ";
+	try {
+		std::cin >> x;
+		std::cin >> y;
+		/*while (true) {
+			Menu();
+			short opt;
+			std::cin >> opt;
+			switch (opt) {
+			case 1:
+				std::cout << x << " + " << y << " = " << (x + y) << std::endl;
+				break;
 
-	case 3:
-		std::cout << x << " * " << y << " = " << (x * y) << std::endl;
-		break;
+			case 2:
+				std::cout << x << " - " << y << " = " << (x - y) << std::endl;
+				break;
 
-	case 4:
-		if (x < y) {
-			std::cout << "True" << std::endl;
-		}
-		else {
-			std::cout << "False" << std::endl;
-		}
-		break;
+			case 3:
+				std::cout << x << " * " << y << " = " << (x * y) << std::endl;
+				break;
 
-	case 5:
-		if (x > y) {
-			std::cout << "True" << std::endl;
-		}
-		else {
-			std::cout << "False" << std::endl;
-		}
-		break;
+			case 4:
+				if (x < y) {
+					std::cout << "True" << std::endl;
+				}
+				else {
+					std::cout << "False" << std::endl;
+				}
+				break;
 
-	case 6:
-		if (x == y) {
-			std::cout << "True" << std::endl;
-		}
-		else {
-			std::cout << "False" << std::endl;
-		}
-		break;
+			case 5:
+				if (x > y) {
+					std::cout << "True" << std::endl;
+				}
+				else {
+					std::cout << "False" << std::endl;
+				}
+				break;
 
-	case 7:
-		if (x != y) {
-			std::cout << "True" << std::endl;
+			case 6:
+				if (x == y) {
+					std::cout << "True" << std::endl;
+				}
+				else {
+					std::cout << "False" << std::endl;
+				}
+				break;
+
+			case 7:
+				if (x != y) {
+					std::cout << "True" << std::endl;
+				}
+				else {
+					std::cout << "False" << std::endl;
+				}
+				break;
+			}
 		}
-		else {
-			std::cout << "False" << std::endl;
+		return 0;*/
+	}
+	catch (std::invalid_argument& err) {
+		std::cerr << "Ошибка: " << err.what() << std::endl;
+		return false;
+		exit(-1);
+	}
+	//std::cin >> x >> y;
+	while (true) {
+		Menu();
+		short opt;
+		std::cin >> opt;
+		switch (opt) {
+		case 1:
+			std::cout << x << " + " << y << " = " << (x + y) << std::endl;
+			break;
+
+		case 2:
+			std::cout << x << " - " << y << " = " << (x - y) << std::endl;
+			break;
+
+		case 3:
+			std::cout << x << " * " << y << " = " << (x * y) << std::endl;
+			break;
+
+		case 4:
+			if (x < y) {
+				std::cout << "True" << std::endl;
+			}
+			else {
+				std::cout << "False" << std::endl;
+			}
+			break;
+
+		case 5:
+			if (x > y) {
+				std::cout << "True" << std::endl;
+			}
+			else {
+				std::cout << "False" << std::endl;
+			}
+			break;
+
+		case 6:
+			if (x == y) {
+				std::cout << "True" << std::endl;
+			}
+			else {
+				std::cout << "False" << std::endl;
+			}
+			break;
+
+		case 7:
+			if (x != y) {
+				std::cout << "True" << std::endl;
+			}
+			else {
+				std::cout << "False" << std::endl;
+			}
+			break;
 		}
-		break;
 	}
 }
