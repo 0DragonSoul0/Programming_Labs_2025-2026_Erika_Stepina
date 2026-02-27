@@ -2,7 +2,6 @@
 #include <vector>
 #include <string>
 #include <locale.h>
-#include <cstdlib>
 
 class BigInt {
 private:
@@ -356,39 +355,15 @@ public:
 	friend std::istream& operator>>(std::istream& os, BigInt& n) {
 		std::string str;
 		os >> str;
-		
+
 		try {
 			n = BigInt(str);
 		}
-		/*catch (std::invalid_argument& err) {
-			std::cerr << "Ошибка: " << err.what() << std::endl;
-		}*/
-		/*catch (...) {
-			n = BigInt();
-		}*/
 		catch (const std::exception& error) {
 			std::cerr << "Ошибка: " << error.what() << std::endl;
 			throw std::invalid_argument("введено нечисловое значение.");
 		}
-
 		return os;
-
-
-		/*catch (const std::exception& error) {
-			std::cerr << "Ошибка: " << error.what() << std::endl;
-			throw std::invalid_argument("Ошибка: введено нечисловое значение");
-		}*/
-
-		//catch (...) {
-		//	//n = BigInt(str);
-		//	for (char c : str.substr(1, str.length() - 1)) {
-		//		if (!std::isdigit(c)) {
-		//			throw std::invalid_argument("Ошибка: введено нечисловое значение");
-		//		}
-		//	}
-		//	//n = BigInt(str);
-		//}
-
 	}
 };
 
@@ -411,68 +386,12 @@ int main() {
 	try {
 		std::cin >> x;
 		std::cin >> y;
-		/*while (true) {
-			Menu();
-			short opt;
-			std::cin >> opt;
-			switch (opt) {
-			case 1:
-				std::cout << x << " + " << y << " = " << (x + y) << std::endl;
-				break;
-
-			case 2:
-				std::cout << x << " - " << y << " = " << (x - y) << std::endl;
-				break;
-
-			case 3:
-				std::cout << x << " * " << y << " = " << (x * y) << std::endl;
-				break;
-
-			case 4:
-				if (x < y) {
-					std::cout << "True" << std::endl;
-				}
-				else {
-					std::cout << "False" << std::endl;
-				}
-				break;
-
-			case 5:
-				if (x > y) {
-					std::cout << "True" << std::endl;
-				}
-				else {
-					std::cout << "False" << std::endl;
-				}
-				break;
-
-			case 6:
-				if (x == y) {
-					std::cout << "True" << std::endl;
-				}
-				else {
-					std::cout << "False" << std::endl;
-				}
-				break;
-
-			case 7:
-				if (x != y) {
-					std::cout << "True" << std::endl;
-				}
-				else {
-					std::cout << "False" << std::endl;
-				}
-				break;
-			}
-		}
-		return 0;*/
 	}
 	catch (std::invalid_argument& err) {
 		std::cerr << "Ошибка: " << err.what() << std::endl;
 		return false;
 		exit(-1);
 	}
-	//std::cin >> x >> y;
 	while (true) {
 		Menu();
 		short opt;
