@@ -5,33 +5,33 @@
 
 class BigInt {
 private:
-	bool negative = false;
-	std::vector<short> digits;
+	bool negative_ = false;
+	std::vector<short> digits_;
 	void removeZeros() {
-		while (digits.size() > 1 && digits.back() == 0) {
-			digits.pop_back();
+		while (digits_.size() > 1 && digits_.back() == 0) {
+			digits_.pop_back();
 		}
-		if (digits.size() == 1 || digits.back() == 0) {
-			negative = false;
+		if (digits_.size() == 1 && digits_.back() == 0) {
+			negative_ = false;
 		}
 	}
 public:
 	BigInt() {
-		digits = {0};
-		negative = false;
+		digits_ = {0};
+		negative_ = false;
 	}
 
-	BigInt(std::string n) {
-		while (n[0] == '-') {
-			negative = !negative;
-			n.erase(0, 1);
+	BigInt(std::string num) {
+		while (num[0] == '-') {
+			negative_ = !negative_;
+			num.erase(0, 1);
 		}
-		while (n[0] == '+') {
-			n.erase(0, 1);
+		while (num[0] == '+') {
+			num.erase(0, 1);
 		}
-		for (int i = n.length() - 1; i >= 0; --i) {
-			if (std::isdigit(n[i])) {
-				digits.push_back(n[i] - '0');
+		for (int i = num.length() - 1; i >= 0; --i) {
+			if (std::isdigit(num[i])) {
+				digits_.push_back(num[i] - '0');
 			}
 			else {
 				throw std::invalid_argument("Строка содержит нечисловые символы.");
@@ -40,19 +40,19 @@ public:
 		removeZeros();
 	}
 
-	BigInt(const int& n) {
-		std::string strn = std::to_string(n);
-		while (strn[0] == '-') {
-			negative = !negative;
-			strn.erase(0, 1);
+	BigInt(const int& num) {
+		std::string strnum = std::to_string(num);
+		while (strnum[0] == '-') {
+			negative_ = !negative_;
+			strnum.erase(0, 1);
 		}
-		while (strn[0] == '+') {
-			strn.erase(0, 1);
+		while (strnum[0] == '+') {
+			strnum.erase(0, 1);
 		}
-		for (int i = strn.length() - 1; i >= 0; --i) {
-			if (std::isdigit(strn[i])) {
-				digits.push_back(strn[i] - '0');
-			}
+		for (int i = strnum.length() - 1; i >= 0; --i) {
+			if (std::isdigit(strnum[i])) {
+				digits_.push_back(strnum[i] - '0');
+		}
 			else {
 				throw std::invalid_argument("Строка содержит нечисловые символы.");
 			}
@@ -67,42 +67,41 @@ public:
 		if (other == 0) {
 			return *this;
 		}
-		bool both_negative = false;
-		if (negative && other.negative) {
-			both_negative = true;
+		bool negative = false;
+		if (negative_ && other.negative_) {
+			negative = true;
 		}
-		else if (negative) {
+		else if (negative_) {
 			BigInt thisCopy = *this;
-			thisCopy.negative = false;
+			thisCopy.negative_ = false;
 			BigInt result = other - thisCopy;
 			return result;
 		}
-		else if (other.negative) {
+		else if (other.negative_) {
 			BigInt otherCopy = other;
-			otherCopy.negative = false;
+			otherCopy.negative_ = false;
 			BigInt result = *this - otherCopy;
 			return result;
 		}
 
 		BigInt result;
-		result.digits.clear();
-		size_t max_len = std::max(digits.size(), other.digits.size());
+		result.digits_.clear();
+		size_t max_len = std::max(digits_.size(), other.digits_.size());
 		short carry = 0;
 
 		for (size_t i = 0; i < max_len || carry != 0; ++i) {
 			short sum = carry;
-			if (i < digits.size()) {
-				sum += digits[i];
-			}
-			if (i < other.digits.size()) {
-				sum += other.digits[i];
-			}
-			result.digits.push_back(sum % 10);
+			if (i < digits_.size())
+				sum += digits_[i];
+			if (i < other.digits_.size())
+				sum += other.digits_[i];
+
+			result.digits_.push_back(sum % 10);
 			carry = sum / 10;
 		}
 
 		result.removeZeros();
-		result.negative = both_negative;
+		result.negative_ = negative;
 		return result;
 	}
 
@@ -114,66 +113,65 @@ public:
 	BigInt operator-(const BigInt& other) const {
 		if (*this == 0) {
 			BigInt copyOther = other;
-			copyOther.negative = true;
+			copyOther.negative_ = true;
 			return copyOther;
 		}
 		if (other == 0) {
 			return *this;
 		}
-		bool both_negative = false;
-		if (negative && other.negative) {
+		bool negative = false;
+		if (negative_ && other.negative_) {
 			BigInt thisCopy = *this;
 			BigInt otherCopy = other;
-			thisCopy.negative = false;
-			otherCopy.negative = false;
+			thisCopy.negative_ = false;
+			otherCopy.negative_ = false;
 			BigInt result = otherCopy - thisCopy;
 			return result;
 		}
-		else if (other.negative) {
+		else if (other.negative_) {
 			BigInt otherCopy = other;
-			otherCopy.negative = false;
+			otherCopy.negative_ = false;
 			BigInt result = *this + otherCopy;
 			return result;
 		}
-		else if (negative) {
+		else if (negative_) {
 			BigInt thisCopy = *this;
-			thisCopy.negative = false;
+			thisCopy.negative_ = false;
 			BigInt result = thisCopy + other;
-			result.negative = true;
+			result.negative_ = true;
 			return result;
 		}
 
 		if (*this >= other) {
 			BigInt result;
-			result.digits.clear();
+			result.digits_.clear();
 			short carry = 0;
 
-			for (size_t i = 0; i < digits.size() || carry != 0; ++i) {
-				short dgA = (i < digits.size()) ? digits[i] : 0;
-				short dgB = (i < other.digits.size()) ? other.digits[i] : 0;
+			for (size_t i = 0; i < digits_.size() || carry != 0; ++i) {
+				short dgA = (i < digits_.size()) ? digits_[i] : 0;
+				short dgB = (i < other.digits_.size()) ? other.digits_[i] : 0;
 				short interval = dgA - dgB - carry;
 
 				if (interval < 0) {
 					interval += 10;
 					carry = 1;
 				}
-				else {
-					carry = 0;
-				}
-				result.digits.push_back(interval);
+				else { carry = 0; }
+
+				result.digits_.push_back(interval);
 			}
 			result.removeZeros();
-			result.negative = both_negative;
+			result.negative_ = negative;
 			return result;
 		}
 		else {
 			BigInt result;
-			result.digits.clear();
+			result.digits_.clear();
 			short carry = 0;
 
-			for (size_t i = 0; i < other.digits.size() || carry != 0; ++i) {
-				short dgA = (i < digits.size()) ? digits[i] : 0;
-				short dgB = (i < other.digits.size()) ? other.digits[i] : 0;
+			for (size_t i = 0; i < other.digits_.size() || carry != 0; ++i) {
+				short dgA = (i < digits_.size()) ? digits_[i] : 0;
+				short dgB = (i < other.digits_.size()) ? other.digits_[i] : 0;
 
 				short interval = dgB - dgA - carry;
 
@@ -184,10 +182,12 @@ public:
 				else {
 					carry = 0;
 				}
-				result.digits.push_back(interval);
+
+				result.digits_.push_back(interval);
 			}
+
 			result.removeZeros();
-			result.negative = !both_negative;
+			result.negative_ = !negative;
 			return result;
 		}
 	}
@@ -207,35 +207,37 @@ public:
 		if (other == 1) {
 			return *this;
 		}
-		bool res_negative = false;
-		if (negative) {
-			res_negative = !res_negative;
+		bool negative = false;
+		if (negative_) {
+			negative = !negative;
 		}
-		if (other.negative) {
-			res_negative = !res_negative;
+		if (other.negative_) {
+			negative = !negative;
 		}
 
 		BigInt result;
-		result.digits.clear();
-		for (size_t i = 0; i < other.digits.size(); ++i) {
+		result.digits_.clear();
+		for (size_t i = 0; i < other.digits_.size(); ++i) {
 			BigInt interval;
-			interval.digits.clear();
+			interval.digits_.clear();
 			short carry = 0;
-			for (int j = 0; j < digits.size() || carry != 0; ++j) {
-				short t = carry;
-				if (j < digits.size()) {
-					t += other.digits[i] * digits[j];
+			for (int j = 0; j < digits_.size() || carry != 0; ++j) {
+				short times = carry;
+				if (j < digits_.size()) {
+					times += other.digits_[i] * digits_[j];
 				}
-				interval.digits.push_back(t % 10);
-				carry = t / 10;
+				interval.digits_.push_back(times % 10);
+				carry = times / 10;
 			}
 			for (int k = 0; k < i; ++k) {
-				interval.digits.insert(interval.digits.begin(), 0);
+				interval.digits_.insert(interval.digits_.begin(), 0);
 			}
+
 			result += interval;
 		}
+
 		result.removeZeros();
-		result.negative = res_negative;
+		result.negative_ = negative;
 		return result;
 	}
 
@@ -245,21 +247,21 @@ public:
 	}
 
 	bool operator==(const BigInt& other) const {
-		if (negative != other.negative) {
+		if (negative_ != other.negative_) {
 			return false;
 		}
-		if (digits.size() < other.digits.size()) {
+		if (digits_.size() < other.digits_.size()) {
 			return false;
 		}
-		else if (digits.size() > other.digits.size()) {
+		else if (digits_.size() > other.digits_.size()) {
 			return false;
 		}
 
-		for (int i = digits.size() - 1; i >= 0; --i) {
-			if (digits[i] < other.digits[i]) {
+		for (int i = digits_.size() - 1; i >= 0; --i) {
+			if (digits_[i] < other.digits_[i]) {
 				return false;
 			}
-			else if (digits[i] > other.digits[i]) {
+			else if (digits_[i] > other.digits_[i]) {
 				return false;
 			}
 		}
@@ -272,28 +274,28 @@ public:
 	}
 
 	bool operator<(const BigInt& other) const {
-		if (negative && !other.negative) {
+		if (negative_ && !other.negative_) {
 			return true;
 		}
-		if (!negative && other.negative) {
+		if (!negative_ && other.negative_) {
 			return false;
 		}
 
-		bool both_negative = (negative && other.negative);
+		bool negative = (negative_ && other.negative_);
 
-		if (!both_negative) {
-			if (digits.size() < other.digits.size()) {
+		if (!negative) {
+			if (digits_.size() < other.digits_.size()) {
 				return true;
 			}
-			else if (digits.size() > other.digits.size()) {
+			else if (digits_.size() > other.digits_.size()) {
 				return false;
 			}
 
-			for (int i = digits.size() - 1; i >= 0; --i) {
-				if (digits[i] < other.digits[i]) {
+			for (int i = digits_.size() - 1; i >= 0; --i) {
+				if (digits_[i] < other.digits_[i]) {
 					return true;
 				}
-				else if (digits[i] > other.digits[i]) {
+				else if (digits_[i] > other.digits_[i]) {
 					return false;
 				}
 			}
@@ -301,18 +303,18 @@ public:
 			return false;
 		}
 		else {
-			if (digits.size() < other.digits.size()) {
+			if (digits_.size() < other.digits_.size()) {
 				return false;
 			}
-			else if (digits.size() > other.digits.size()) {
+			else if (digits_.size() > other.digits_.size()) {
 				return true;
 			}
 
-			for (int i = digits.size() - 1; i >= 0; --i) {
-				if (digits[i] < other.digits[i]) {
+			for (int i = digits_.size() - 1; i >= 0; --i) {
+				if (digits_[i] < other.digits_[i]) {
 					return false;
 				}
-				else if (digits[i] > other.digits[i]) {
+				else if (digits_[i] > other.digits_[i]) {
 					return true;
 				}
 			}
@@ -334,19 +336,19 @@ public:
 	}
 
 	void printInfo() const {
-		std::cout << (negative ? "-" : "");
-		for (int i = digits.size() - 1; i >= 0; --i) {
-			std::cout << digits[i];
+		std::cout << (negative_ ? "-" : "");
+		for (int i = digits_.size() - 1; i >= 0; --i) {
+			std::cout << digits_[i];
 		}
 		std::cout << std::endl;
 	}
 
 	friend std::ostream& operator<<(std::ostream& os, const BigInt& n) {
-		if (n.negative) {
+		if (n.negative_) {
 			os << '-';
 		}
 
-		for (auto i = n.digits.rbegin(); i != n.digits.rend(); ++i) {
+		for (auto i = n.digits_.rbegin(); i != n.digits_.rend(); ++i) {
 			os << *i;
 		}
 		return os;
@@ -444,5 +446,4 @@ int main() {
 			break;
 		}
 	}
-
 }
