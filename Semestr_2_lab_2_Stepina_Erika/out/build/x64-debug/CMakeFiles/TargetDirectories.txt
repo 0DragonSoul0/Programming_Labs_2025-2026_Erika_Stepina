@@ -1,3 +1,3 @@
-C:/C++ programming/github_test1/Programming_Labs_2025-2026_Erika_Stepina-main/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/CMakeFiles/Semestr_2_lab_2_Stepina_Erika.dir
-C:/C++ programming/github_test1/Programming_Labs_2025-2026_Erika_Stepina-main/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/CMakeFiles/edit_cache.dir
-C:/C++ programming/github_test1/Programming_Labs_2025-2026_Erika_Stepina-main/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/C++ programming/github_garbage/Programming_Labs_2025-2026_Erika_Stepina-main/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/CMakeFiles/Semestr_2_lab_2_Stepina_Erika.dir
+C:/C++ programming/github_garbage/Programming_Labs_2025-2026_Erika_Stepina-main/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/C++ programming/github_garbage/Programming_Labs_2025-2026_Erika_Stepina-main/Semestr_2_lab_2_Stepina_Erika/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
