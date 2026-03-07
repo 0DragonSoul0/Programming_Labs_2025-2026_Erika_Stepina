@@ -59,9 +59,9 @@ void Car::addMileage(int& km) {
     }
     else {
         mileage += km;
-        std::cout << "Пробег добавлен: " << km << " км" << std::endl;
-        std::cout << "Текущий пробег: " << mileage << " км" << std::endl;
-        std::cout << std::endl;
+        //std::cout << "Пробег добавлен: " << km << " км" << std::endl;
+        //std::cout << "Текущий пробег: " << mileage << " км" << std::endl;
+        //std::cout << std::endl;
     }
 }
 
