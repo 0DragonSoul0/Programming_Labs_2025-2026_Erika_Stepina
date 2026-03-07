@@ -1,0 +1,16 @@
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/CMakeFiles/Semestr_2_lab_4_Stepina_Erika_variant_2.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/CMakeFiles/install.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/CMakeFiles/install/local.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/CMakeFiles/Semestr_2_lab_4_Stepina_Erika_variant_2_autogen_timestamp_deps.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/CMakeFiles/Semestr_2_lab_4_Stepina_Erika_variant_2_autogen.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/carlib/CMakeFiles/carlib.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/carlib/CMakeFiles/edit_cache.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/carlib/CMakeFiles/rebuild_cache.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/carlib/CMakeFiles/list_install_components.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/carlib/CMakeFiles/install.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/carlib/CMakeFiles/install/local.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/carlib/CMakeFiles/carlib_autogen_timestamp_deps.dir
+C:/C++ programming/Semestr_2_lab_4_Stepina_Erika_variant_2/build/Desktop-Debug/carlib/CMakeFiles/carlib_autogen.dir
