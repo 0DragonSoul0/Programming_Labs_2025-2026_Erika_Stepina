@@ -1,0 +1,16 @@
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/CMakeFiles/Semestr_2_lab_5_Stepina_Erika.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/CMakeFiles/install.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/CMakeFiles/install/local.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/CMakeFiles/Semestr_2_lab_5_Stepina_Erika_autogen_timestamp_deps.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/CMakeFiles/Semestr_2_lab_5_Stepina_Erika_autogen.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/bigintlib/CMakeFiles/bigintlib.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/bigintlib/CMakeFiles/edit_cache.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/bigintlib/CMakeFiles/rebuild_cache.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/bigintlib/CMakeFiles/list_install_components.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/bigintlib/CMakeFiles/install.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/bigintlib/CMakeFiles/install/local.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/bigintlib/CMakeFiles/bigintlib_autogen_timestamp_deps.dir
+C:/C++ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/bigintlib/CMakeFiles/bigintlib_autogen.dir

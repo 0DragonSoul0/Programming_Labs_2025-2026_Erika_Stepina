@@ -1,0 +1,21 @@
+bigintlib_autogen/timestamp: \
+	C:/C++\ programming/Semestr_2_lab_5_Stepina_Erika/bigintlib/CMakeLists.txt \
+	C:/C++\ programming/Semestr_2_lab_5_Stepina_Erika/bigintlib/bigint.cpp \
+	C:/C++\ programming/Semestr_2_lab_5_Stepina_Erika/bigintlib/bigint.h \
+	C:/C++\ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
+	C:/C++\ programming/Semestr_2_lab_5_Stepina_Erika/build/Desktop-Debug/CMakeFiles/4.1.1/CMakeCCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/CMakeCInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Compiler/MSVC-C.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Compiler/MSVC.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Linker/MSVC-C.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Linker/MSVC.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-MSVC-C.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-MSVC.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC-C.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC.cmake \
+	C:/Program\ Files/CMake/bin/cmake.exe
